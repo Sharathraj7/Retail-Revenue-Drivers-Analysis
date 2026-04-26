@@ -17,7 +17,7 @@ Real-world data is messy. I implemented a robust preprocessing pipeline to handl
 * **Imputation:** Handled missing `Checkout Number` values using median imputation grouped by store `Type`.
 * **Target Transformation:** Applied a `log1p` (Logarithmic base e + 1) transformation to the target variable (`Revenue`) to normalize the highly right-skewed financial data.
 
-[DRAG AND DROP THE 'revenue_distribution.png' FILE HERE]
+<img width="3000" height="1800" alt="revenue_distribution" src="https://github.com/user-attachments/assets/d592f5ef-e0cb-4d6e-99c6-65305f9cc352" />
 
 ### 2. Feature Engineering
 Machine learning models require mathematical representations of categories. I engineered features using:
@@ -27,7 +27,8 @@ Machine learning models require mathematical representations of categories. I en
 ### 3. Feature Importance vs. Linear Correlation
 I ran both a Correlation Matrix and a Random Forest Regressor to compare linear relationships vs. non-linear interactions.
 
-[DRAG AND DROP THE 'correlation_heatmap.png' FILE HERE]
+<img width="3600" height="2400" alt="correlation_heatmap" src="https://github.com/user-attachments/assets/f02b5429-cd37-4d00-970a-e640efd60d7d" />
+
 
 **The Business Insight:**
 While the correlation matrix suggested `Checkout Number` was the strongest predictor (0.77), the Tree-based Feature Importance algorithm revealed the deeper truth:
@@ -37,7 +38,7 @@ While the correlation matrix suggested `Checkout Number` was the strongest predi
 
 *The algorithm proved that store "Type" (Hyper vs Express) is largely redundant if the square footage is already known.*
 
-[DRAG AND DROP THE 'feature_importance.png' FILE HERE]
+<img width="3600" height="2100" alt="feature_importance" src="https://github.com/user-attachments/assets/15e6f649-6e06-415b-8cd1-4bd3e38cf532" />
 
 ### 4. Model Tuning & Evaluation
 I established a baseline using a default `RandomForestRegressor` and then optimized it using `GridSearchCV`. 
